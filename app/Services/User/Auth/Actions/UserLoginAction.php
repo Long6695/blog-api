@@ -4,7 +4,7 @@ namespace App\Services\User\Auth\Actions;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use App\Services\Action\Action;
+use App\Services\Action;
 use Illuminate\Support\Facades\Hash;
 
 class UserLoginAction extends Action

@@ -2,7 +2,7 @@
 
 namespace App\Services\User\Auth\Actions;
 
-use App\Services\Action\Action;
+use App\Services\Action;
 
 class UserLogoutAction extends Action
 {

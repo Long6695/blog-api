@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Action;
+namespace App\Services;
 
 abstract class Action
 {

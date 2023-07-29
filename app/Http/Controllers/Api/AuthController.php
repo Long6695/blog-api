@@ -23,7 +23,7 @@ class AuthController extends Controller
     {
         $credential = $request->validated();
         $response = resolve(UserLoginAction::class)->handle($credential);
-        return response($response);
+        return response($response, 200);
     }
 
 

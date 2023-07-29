@@ -3,7 +3,7 @@
 namespace App\Services\User\Auth\Actions;
 
 use App\Models\User;
-use App\Services\Action\Action;
+use App\Services\Action;
 
 class UserSignupAction extends Action
 {
