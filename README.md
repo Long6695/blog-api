@@ -27,8 +27,9 @@ Make sure you have the following software installed on your machine:
 
 1. Clone the repository:
 
-   ```bash
-   git clone [https://github.com/Long6695/blog-web.git](https://github.com/Long6695/blog-web.git)
+    ```bash
+   git clone https://github.com/Long6695/blog-api.git
+   cd blog-api
    ```
 
 2. Build the Docker containers:
