@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([
-    'prefix' => 'v1/user',
-    'namespace' => 'V1\User',
-], function () {
-    require __DIR__ . '/api/v1/user/index.php';
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    require_once __DIR__ . '/auth.php';
+});
+
+Route::group([], function () {
+    Route::group(['namespace' => 'Auth'], function () {
+        Route::post('/signup', [AuthController::class, 'signup']);
+        Route::post('/login', [AuthController::class, 'login']);
+    });
 });
