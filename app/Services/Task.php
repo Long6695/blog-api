@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Task;
+namespace App\Services;
 
 abstract class Task 
 {

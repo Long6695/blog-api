@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\SubAction;
+namespace App\Services;
 
 abstract class SubAction
 {
