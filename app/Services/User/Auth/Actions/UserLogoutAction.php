@@ -10,8 +10,6 @@ class UserLogoutAction extends Action
     {
         $request->user()->currentAccessToken()->delete();
 
-        return [
-            'message' => 'Logout successfully'
-        ];
+        return $this->success([], 'Logout successfully');
     }
 }

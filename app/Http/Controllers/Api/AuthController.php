@@ -15,21 +15,17 @@ class AuthController extends Controller
     public function signup(SignupRequest $request)
     {
         $data = $request->validated();
-        $response = resolve(UserSignupAction::class)->handle($data);
-        return response($response, 201);
+        return resolve(UserSignupAction::class)->handle($data);
     }
 
     public function login(LoginRequest $request)
     {
-        $credential = $request->validated();
-        $response = resolve(UserLoginAction::class)->handle($credential);
-        return response($response, 200);
+        return resolve(UserLoginAction::class)->handle($request);
     }
 
 
     public function logout(Request $request)
     {
-        $response = resolve(UserLogoutAction::class)->handle($request);
-        return response($response, 204);
+        return resolve(UserLogoutAction::class)->handle($request);
     }
 }
