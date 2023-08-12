@@ -2,7 +2,6 @@
 
 namespace App\Services\User\Auth\Actions;
 
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Services\Action;
 use App\Services\User\Auth\Tasks\GetUserByEmail;
