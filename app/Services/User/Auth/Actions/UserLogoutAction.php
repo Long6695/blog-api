@@ -2,7 +2,7 @@
 
 namespace App\Services\User\Auth\Actions;
 
-use App\Services\Action\Action;
+use App\Services\Action;
 
 class UserLogoutAction extends Action
 {
@@ -10,8 +10,6 @@ class UserLogoutAction extends Action
     {
         $request->user()->currentAccessToken()->delete();
 
-        return [
-            'message' => 'Logout successfully'
-        ];
+        return $this->success([], 'Logout successfully');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
+use App\Services\User\Auth\Actions\GetUserAction;
 use App\Services\User\Auth\Actions\UserLoginAction;
 use App\Services\User\Auth\Actions\UserLogoutAction;
 use App\Services\User\Auth\Actions\UserSignupAction;
@@ -15,21 +16,22 @@ class AuthController extends Controller
     public function signup(SignupRequest $request)
     {
         $data = $request->validated();
-        $response = resolve(UserSignupAction::class)->handle($data);
-        return response($response, 201);
+        return resolve(UserSignupAction::class)->handle($data);
     }
 
     public function login(LoginRequest $request)
     {
-        $credential = $request->validated();
-        $response = resolve(UserLoginAction::class)->handle($credential);
-        return response($response);
+        return resolve(UserLoginAction::class)->handle($request);
     }
 
 
     public function logout(Request $request)
     {
-        $response = resolve(UserLogoutAction::class)->handle($request);
-        return response($response, 204);
+        return resolve(UserLogoutAction::class)->handle($request);
+    }
+
+    public function me()
+    {
+        return resolve(GetUserAction::class)->handle();
     }
 }
