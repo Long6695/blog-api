@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     require_once __DIR__ . '/auth.php';
+    require_once __DIR__ . '/like.php';
+    require_once __DIR__ . '/post.php';
+    require_once __DIR__ . '/category.php';
 });
 
 Route::group([], function () {
